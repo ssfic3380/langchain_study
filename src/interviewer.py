@@ -64,6 +64,21 @@ class Interviewer:
         """
         return self.chain.run(input)
 
+    def generate_follow_up_question(self, question, answer):
+        input = f"""
+        당신은 {self.company_name}라는 회사의 면접관으로서, {self.job_name} 포지션에 지원한 지원자의 답변을 보고 후속 질문을 만들고 있습니다.
+        후속 질문 1개를 준비하되, 후속 질문이 필요 없다면 그런 사실을 명시하십시오.
+        
+        질문: {question}
+        답변: {answer}
+        
+        후속 질문을 다음 형식에 맞추어 출력하십시오.
+        ```
+        후속 질문: [Follow-up queestion]
+        ```
+        """
+        return self.chain.run(input)
+
     def analyze_interview_answer_and_generate_follow_up_question(self, question, answer):
         input = f"""
         당신은 {self.company_name}라는 회사의 면접관으로서, {self.job_name} 포지션에 지원한 지원자의 답변을 분석하고 평가하고 있습니다. 아래 제공된 질문과 답변을 바탕으로 분석하십시오. 
@@ -84,8 +99,7 @@ class Interviewer:
         아쉬운 점:
         [Areas for Improvement]
         
-        후속 질문:
-        [Follow-up question]
+        후속 질문: [Follow-up question]
         ```
         """
         return self.chain.run(input)
@@ -117,8 +131,7 @@ class Interviewer:
         아쉬운 점:
         [Areas for Improvement]
         
-        후속 질문:
-        [Follow-up question]
+        후속 질문: [Follow-up question]
         ```
         """
         return self.chain.run(input)

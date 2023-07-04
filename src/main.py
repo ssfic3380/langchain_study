@@ -66,10 +66,13 @@ def main():
     """
     interviewer.analyze_interview_answer(question, answer)
 
-    # 5. 면접 답변 평가 및 심화 질문 생성 (Chat GPT Only)
+    # 5. ver1) 심화 질문 생성 (평가 X)
+    interviewer.generate_follow_up_question(question, answer)
+
+    # 5. ver2) 면접 답변 평가 및 심화 질문 생성 (Chat GPT Only)
     interviewer.analyze_interview_answer_and_generate_follow_up_question(question, answer)
 
-    # 6. 면접 답변 평가 및 심화 질문 생성 (with Guideline)
+    # 6. ver3) 면접 답변 평가 및 심화 질문 생성 (with Guideline)
     interviewer.analyze_interview_answer_and_generate_follow_up_question_with_guideline(question, answer)
 
 
