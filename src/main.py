@@ -54,7 +54,7 @@ def main():
     interviewer.analyze_cover_letter()
 
     # 3. 초기 질문 n개 생성
-    interviewer.generate_interview_questions(3)
+    interviewer.generate_interview_questions()
 
     # 4. 면접 답변 평가
     question = "팀원과의 갈등이 있을 때 해결한 경험이 있는가?"

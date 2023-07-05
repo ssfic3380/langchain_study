@@ -20,7 +20,7 @@ class InterviewerChainBuilder:
         self.job_posting = job_posting
         self.cover_letter = cover_letter
 
-        self.chat = ChatOpenAI(temperature=0.5,
+        self.chat = ChatOpenAI(temperature=0.8,
                                streaming=True,
                                callbacks=[CustomStreamingCallbackHandler()],
                                verbose=True)
@@ -28,7 +28,7 @@ class InterviewerChainBuilder:
 
     def create_system_message_prompt(self):
         info_template = f"""
-        당신은 {self.company_name}라는 회사에서 {self.job_name} 포지션을 뽑는 면접관의 역할을 수행하게 됩니다. 아래는 이번 모집의 세부 사항과 지원자의 자기소개서입니다. 이 정보들을 주의 깊게 분석하고 이해하며, 면접관으로서의 역할을 준비하십시오.
+        당신은 {self.company_name}라는 회사에서 {self.job_name} 포지션의 신입 사원을 뽑는 면접관의 역할을 수행하게 됩니다. 아래는 이번 모집의 세부 사항과, 회사에서 제시한 질문에 대해서 대답한 지원자의 자기소개서입니다. 이 정보들을 주의 깊게 분석하고 이해하며, 면접관으로서의 역할을 준비하십시오.
 
         ```
         회사명: {self.company_name}
